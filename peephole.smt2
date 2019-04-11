@@ -72,19 +72,19 @@
   (if (not (= x y)) ONE ZERO))
 
 (define-fun ocaml-cmp-lt ((x ocaml-int) (y ocaml-int)) ocaml-int
-  (if (< (ocaml-to-int-untagged x) (ocaml-to-int-untagged y))
+  (if (bvslt x y)
     ONE ZERO))
 
 (define-fun ocaml-cmp-gt ((x ocaml-int) (y ocaml-int)) ocaml-int
-  (if (> (ocaml-to-int-untagged x) (ocaml-to-int-untagged y))
+  (if (bvsgt x y)
     ONE ZERO))
 
 (define-fun ocaml-cmp-le ((x ocaml-int) (y ocaml-int)) ocaml-int
-  (if (<= (ocaml-to-int-untagged x) (ocaml-to-int-untagged y))
+  (if (bvsle x y)
     ONE ZERO))
 
 (define-fun ocaml-cmp-ge ((x ocaml-int) (y ocaml-int)) ocaml-int
-  (if (>= (ocaml-to-int-untagged x) (ocaml-to-int-untagged y))
+  (if (bvsge x y)
     ONE ZERO))
 
 (define-fun ocaml-cmp ((cmp CMP) (x ocaml-int) (y ocaml-int)) ocaml-int
